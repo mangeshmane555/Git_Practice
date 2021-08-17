@@ -1,2 +1,2 @@
 This is demo text file for git
- 
+ This in another line for git commit
