@@ -3,4 +3,8 @@ This is demo text file for git
 Practice on branching
 Changes done
 
+<<<<<<< HEAD
 The changes on 8 sept done
+=======
+New comment for git merge and delete
+>>>>>>> branch1
