@@ -4,7 +4,11 @@ Practice on branching
 Changes done
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 The changes on 8 sept done
 =======
 New comment for git merge and delete
 >>>>>>> branch1
+=======
+
+>>>>>>> a2e151a464601d20c4944f7319d8ad271435cf3e
