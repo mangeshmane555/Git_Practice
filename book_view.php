@@ -12,6 +12,7 @@
 	</head>
 	<body>
 <!-- This is comment to know the git practice -->
+<!-- This is my_branch changes on git-->
 <!-- Display_Modal Starts here -->
 		<div class="modal fade" id="displayRecordModal">
 		  	<div class="modal-dialog">
