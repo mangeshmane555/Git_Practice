@@ -11,7 +11,7 @@
 
 	</head>
 	<body>
-
+<!-- This is comment to know the git practice -->
 <!-- Display_Modal Starts here -->
 		<div class="modal fade" id="displayRecordModal">
 		  	<div class="modal-dialog">
