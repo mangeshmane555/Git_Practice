@@ -5,7 +5,7 @@ use App\Models\BookModel;
 class Book extends BaseController
 {
 
-//Home Section---------------------------------------
+// Home Section---------------------------------------
 	public function index()
 	{
 		helper('form');
@@ -24,7 +24,7 @@ class Book extends BaseController
 //Create Section---------------------------------------
 	public function create()
 	{
-		helper('form');
+		helper('form');																			
 		helper('url');
 
 		return view('books/create');
@@ -52,7 +52,7 @@ class Book extends BaseController
 		return redirect()->to('/books');
 	}
 
-//Edit Section--------------------------------------
+// Edit Section--------------------------------------
 	public function edit($id)
 	{
 		helper('form'); //Load helpers in function of controllers and cannot add it to autoload.php in CI 4		
