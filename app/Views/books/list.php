@@ -51,7 +51,7 @@
 										<td><?php echo $book['isbn_no']; ?></td>
 										
 										<td>
-											<!-- passing id to the specified page using base_url() -->
+											<!-- sending id to the specified page using base_url() -->
 											<a href="<?php echo base_url('books/edit/'.$book['id']); ?>" class="btn btn-primary">Edit</a>
 											<a href="<?php echo base_url('books/view/'.$book['id']); ?>" class="btn btn-success">View</a>
 

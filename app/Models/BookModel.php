@@ -8,9 +8,9 @@ class BookModel extends Model
 	protected $primaryKey = 'id';
 	protected $allowedFields = ['title','author','isbn_no'];
 
-	public function getRecords()   //user Defined Function to fetch records
+	public function getRecords()   //user Defined Function to fetch records from db
 	{
-		return $this->findAll();   //built in method to fetch all records
+		return $this->findAll();   //built in method to fetch and returns array of all records from table
 	}
 
 	public function getRow($id)   //user Defined Function to fetch one row of table
@@ -20,8 +20,6 @@ class BookModel extends Model
 		return $this->find($id);  //return a single row of selected id using model to controller
 		
 	}
-
-
 }
-	
+	  
 ?>

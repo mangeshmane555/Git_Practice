@@ -4,7 +4,6 @@ use App\Models\BookModel;
 
 class Book extends BaseController
 {
-
 // Home Section---------------------------------------
 	public function index()
 	{
@@ -35,7 +34,7 @@ class Book extends BaseController
 		// return redirect()->to('/books'); //books is a table in databse ci4_crud
 	}
 
-//insert Section---------------------------------------
+//To insert selected record of book from book list--------------------------------------------
 	public function insert()
 	{
 		helper('form');
@@ -52,7 +51,7 @@ class Book extends BaseController
 		return redirect()->to('/books');
 	}
 
-// Edit Section--------------------------------------
+//To edit selected record of book from book list--------------------------------------------
 	public function edit($id)
 	{
 		helper('form'); //Load helpers in function of controllers and cannot add it to autoload.php in CI 4		
@@ -75,7 +74,7 @@ class Book extends BaseController
 		return view('books/edit', $data); 
 	}
 
-//Update Section---------------------------------------
+//To update selected record of book from book list---------------------------------------
 	public function update()
 	{
 		helper('form'); //Load helpers in function of controllers and cannot add it to autoload.php in CI4		
@@ -96,12 +95,36 @@ class Book extends BaseController
 			// print_r($data);
 		$model->update($id, $data);   //update command using model
 		return redirect()->to('/books');
+	} 
+
+//To View selected record of book from book list 
+public function view($id)
+{
+	helper('form'); //Load helpers in function of controllers and cannot add it to autoload.php in CI 4		
+	helper('url');
+	
+	$model = new BookModel();
+	$book = $model->getRow($id); // getting single row passed from model
+	// print_r($book);
+	
+	if (empty($book))
+	{
+		return redirect()->to('/books'); // If id have wrong hard input parameter to address bar
 	}
 
+	$data = [];
+	$data['book'] = $book;  
+	// print_r($data['book']);
+
+	//Passing the data of array to the view edit.php view to prefill the values in textbox
+	return view('books/view', $data); 
+}
+
+
+//To delete selected record of book from book list 
 	public function delete($id)
 	{
 		// $session = \Config\Services::session();
-
 		$model = new bookModel();
 		$book =$model->getRow($id);
 
