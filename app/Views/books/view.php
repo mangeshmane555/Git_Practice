@@ -54,7 +54,7 @@
 								<!-- <input type="text" name="isbn_no" class="form-control col-4" value="<?php echo set_value('isbn_no', $book['isbn_no']); ?>"> -->
 								<p><b><?php echo $book['isbn_no'] ?></b></p>
 								<br>
-								<a class="btn btn-secondary text-white btn-sm" name="cancel_view" role="button" onclick='window.location.reload();' data-dismiss="modal">Close</a> &nbsp &nbsp
+								<a href="<?php echo base_url('books'); ?>" class="btn btn-secondary text-white btn-sm" name="cancel_view" role="button" onclick='window.location.reload();' data-dismiss="modal">Close</a> &nbsp &nbsp
 							</div> 
 						</div>
 					</form>

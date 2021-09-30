@@ -97,14 +97,14 @@ class Book extends BaseController
 		return redirect()->to('/books');
 	} 
 
-//To View selected record of book from book list 
+//To View selected record of book from book list --------------------------------------
 public function view($id)
 {
 	helper('form'); //Load helpers in function of controllers and cannot add it to autoload.php in CI 4		
 	helper('url');
 	
 	$model = new BookModel();
-	$book = $model->getRow($id); // getting single row passed from model
+	$book = $model->getRow($id); // getting single row passed from model using id
 	// print_r($book);
 	
 	if (empty($book))
@@ -116,12 +116,12 @@ public function view($id)
 	$data['book'] = $book;  
 	// print_r($data['book']);
 
-	//Passing the data of array to the view edit.php view to prefill the values in textbox
 	return view('books/view', $data); 
+	return view('books/list', $data);  // Passing data to modal when modal button gets clicked 
+
 }
 
-
-//To delete selected record of book from book list 
+//To delete selected record of book from book list ---------------------------------------
 	public function delete($id)
 	{
 		// $session = \Config\Services::session();
@@ -138,7 +138,14 @@ public function view($id)
 		// $session->setFlashdata('success', 'Record Deleted Successfully  !!');
 		return redirect()->to('/books');
 	}
+	public function viewRecord()
+	{
 
+		$books = new BookModel();
+		$b_id = $this->request->getGet('book_id'); //getting the book_id from the ajax call using get method
+		$data['books'] = $books->find($b_id);    // finding the record as per b_id from table using model instance
+		return $this->response->setJSON($data); // sending data to ajax call in json format using response variable
+	}
 }
 
 ?>

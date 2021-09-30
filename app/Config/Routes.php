@@ -42,7 +42,9 @@ $routes->post('/books/create', 'Book::create');  //route for create post method 
 $routes->get('/books/edit/(:num)', 'Book::edit/$1'); // To get number id values on edit button 
 $routes->post('/books/edit/(:num)', 'Book::edit/$1');
 
-$routes->get('/books/view/(:num)', 'Book::view/$1');  // (Working) To get number id values on view button get method
+// $routes->get('/books/view/(:num)', 'Book::view/$1');  // (Working) To get number id values on view button get method
+
+$routes->get('/books/viewRecord', 'Book::viewRecord');  //To get number id values on modal button get method
 
 $routes->get('/books/delete/(:num)', 'Book::delete/$1'); // To get number id values on delete button 
 
